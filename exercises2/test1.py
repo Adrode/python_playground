@@ -35,7 +35,7 @@ for item in words:
 numbers = [3, 1, 4, 1, 5, 9, 2, 6, 5]
 
 sort = sorted(set(numbers))
-print(sort)
+# print(sort)
 
 # ---
 
@@ -52,7 +52,7 @@ for item in numbers:
   else:
     even_odd_dict["odd"].append(item)
 
-print(even_odd_dict)
+# print(even_odd_dict)
 
 # ---
 
@@ -68,5 +68,37 @@ for item in text.split():
 
 for item in text.split():
   if check[item] == 1:
+    # print(item)
+    break
+
+# ---
+
+words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+
+anagrams = {}
+
+for word in words:
+  key = "".join(sorted(word))
+  if key in anagrams:
+    anagrams[key].append(word)
+  else:
+    anagrams[key] = [word]
+
+# print(anagrams)
+
+# ---
+
+s = "programming"
+
+keys = {}
+
+for item in s:
+  if item in keys:
+    keys[item] += 1
+  else:
+    keys[item] = 1
+
+for item in s:
+  if keys[item] == 1:
     print(item)
     break
