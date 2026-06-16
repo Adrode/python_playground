@@ -18,7 +18,7 @@ def most_frequent_element():
 
   print(most_frequent_key)
 
-# most_frequent_element()
+most_frequent_element()
 
 def merge_dicts():
   dict1 = {"a": 1, "b": 2, "c": 3}
@@ -41,3 +41,49 @@ def merge_dicts():
   print(merged_dict)
 
 merge_dicts()
+
+def string_compression():
+  s = "aaabbbccdaa"
+  # expected "a3b3c2d1a2"
+
+  i = 0
+  j = 0
+  result = ""
+
+  for l in s:
+    j += 1
+
+    if i+1 == len(s):
+      result += f"{l}{j}"
+      break
+    elif s[i+1] != l:
+      result += f"{l}{j}"
+      j = 0
+
+    i += 1
+  
+  print(result)
+
+string_compression()
+
+def valid_parentheses():
+  s = "(())()"
+
+  lb_pointer = 0
+  rb_pointer = 0
+
+  for item in s:
+    if item == "(":
+      lb_pointer += 1
+    elif item == ")":
+      rb_pointer += 1
+    
+    if lb_pointer - rb_pointer < 0:
+      return False
+  
+  if lb_pointer - rb_pointer != 0:
+    return False
+  else:
+    return True
+
+print(valid_parentheses())
