@@ -87,3 +87,33 @@ def valid_parentheses():
     return True
 
 print(valid_parentheses())
+
+def second_most_frequent():
+  numbers = [1, 2, 3, 2, 4, 1, 2, 5, 1, 1, 3]
+  numbers_dict = {}
+
+  for item in numbers:
+    if item in numbers_dict:
+      numbers_dict[item] += 1
+    else:
+      numbers_dict[item] = 1
+
+  max_key = 0
+  max_val = 0
+  for key, val in numbers_dict.items():
+    if val > max_val:
+      max_key = key
+      max_val = val
+
+  numbers_dict.pop(max_key)
+
+  max_key = 0
+  max_val = 0
+  for key, val in numbers_dict.items():
+    if val > max_val:
+      max_key = key
+      max_val = val
+
+  print(max_key)
+
+second_most_frequent()
