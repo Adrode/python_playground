@@ -6,7 +6,7 @@ class Node:
 
   def __str__(self):
     return str(self.val)
-  
+    
 A = Node(5)
 B = Node(1)
 C = Node(8)
