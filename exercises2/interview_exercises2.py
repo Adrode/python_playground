@@ -44,7 +44,7 @@ def longest_consecutive_run1():
                 temporary[item] = 1
             else:
                 temporary[item] += 1
-            
+
             if collection[item] < temporary[item]:
                 collection[item] = temporary[item]
 
@@ -58,7 +58,9 @@ def longest_consecutive_run1():
 
     return collection, max_key
 
+
 # print(longest_consecutive_run1())
+
 
 def longest_consecutive_run2():
     s = "aabbbbccccddeeeeeeaacccccccccc"
@@ -83,4 +85,25 @@ def longest_consecutive_run2():
     return (best_key, best_val)
 
 
-print(longest_consecutive_run2())
+# print(longest_consecutive_run2())
+
+
+def two_sum():
+    numbers = [2, 1, 3, 4]
+    target = 6
+
+    collection = {}
+    current_index = 0
+
+    for item in numbers:
+        search = target - item
+        
+        if search in collection:
+            return (collection[search], current_index)
+
+        if item not in collection:
+            collection[item] = current_index
+            current_index += 1
+
+
+print(two_sum())
