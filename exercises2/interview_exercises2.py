@@ -97,7 +97,7 @@ def two_sum():
 
     for item in numbers:
         search = target - item
-        
+
         if search in collection:
             return (collection[search], current_index)
 
@@ -106,4 +106,22 @@ def two_sum():
             current_index += 1
 
 
-print(two_sum())
+# print(two_sum())
+
+
+def first_unique_character():
+    s = "aabbccdeffg"
+
+    collection = {}
+
+    for x in s:
+        if x not in collection:
+            collection[x] = 1
+        else:
+            collection[x] += 1
+
+    for key, x in enumerate(s):
+        if collection[x] == 1:
+            return key
+        
+print(first_unique_character())
