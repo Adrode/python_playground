@@ -123,5 +123,25 @@ def first_unique_character():
     for key, x in enumerate(s):
         if collection[x] == 1:
             return key
-        
-print(first_unique_character())
+
+
+# print(first_unique_character())
+
+
+def max_sum_of_k_consecutive_elements():
+    numbers = [2, 5, 5, 1, 3, 2]
+    k = 3
+
+    index = 0
+    sliding_sum = sum(numbers[index:index+k])
+    max_sum = sliding_sum
+
+    while index + k < len(numbers):
+        if max_sum < sliding_sum:
+            max_sum = sliding_sum
+        sliding_sum = sliding_sum + numbers[index+k] - numbers[index]
+        index += 1
+
+    return max_sum
+
+print(max_sum_of_k_consecutive_elements())
