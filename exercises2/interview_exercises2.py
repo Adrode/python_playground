@@ -187,4 +187,43 @@ def minimum_sum_sliding_window():
 
     return min_sum
 
-print(minimum_sum_sliding_window())
+
+# print(minimum_sum_sliding_window())
+
+
+def first_duplicate():
+    numbers = [5, 3, 8, 5, 3, 1, 5, 9]
+
+    collection = set()
+
+    for item in numbers:
+        if item in collection:
+            return item
+        collection.add(item)
+
+
+# print(first_duplicate())
+
+
+def shared_elements():
+    list1 = [1, 2, 4, 6, 8]
+    list2 = [2, 4, 5, 6, 9]
+
+    shared_elements = []
+
+    i = 0
+    j = 0
+
+    while i < len(list1) and j < len(list2):
+        if list1[i] < list2[j]:
+            i += 1
+        elif list1[i] > list2[j]:
+            j += 1
+        else:
+            shared_elements.append(list1[i])
+            i += 1
+
+    return shared_elements
+
+
+print(shared_elements())
