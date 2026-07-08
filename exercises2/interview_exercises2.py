@@ -168,4 +168,23 @@ def longest_substring_without_repeating_characters():
     return max_length
 
 
-print(longest_substring_without_repeating_characters())
+# print(longest_substring_without_repeating_characters())
+
+
+def minimum_sum_sliding_window():
+    numbers = [1, 2, 3, 5, 1, 5, 8]
+    k = 2
+
+    index = 0
+    sliding_window = sum(numbers[index : index + k])
+    min_sum = sliding_window
+
+    while index + k < len(numbers):
+        if min_sum > sliding_window:
+            min_sum = sliding_window
+        sliding_window = sliding_window + numbers[index + k] - numbers[index]
+        index += 1
+
+    return min_sum
+
+print(minimum_sum_sliding_window())
