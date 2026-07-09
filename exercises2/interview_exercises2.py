@@ -226,4 +226,24 @@ def shared_elements():
     return shared_elements
 
 
-print(shared_elements())
+# print(shared_elements())
+
+
+def invert_list_in_place():
+    numbers = [1, 2, 3, 4, 5, 6, 7]
+
+    start = 0
+    end = len(numbers) - 1
+    temp = 0
+
+    while start < end:
+        temp = numbers[start]
+        numbers[start] = numbers[end]
+        numbers[end] = temp
+
+        start += 1
+        end -= 1
+
+    return numbers
+
+print(invert_list_in_place())
