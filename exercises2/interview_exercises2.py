@@ -276,4 +276,27 @@ def is_it_anagram():
     return True
 
 
-print(is_it_anagram())
+# print(is_it_anagram())
+
+
+def longest_consecutive_char():
+    s = "aaabbcccccdd"
+
+    act_char = s[0]
+    act_series = 0
+    best_series = 0
+
+    for item in s:
+        if item == act_char:
+            act_series += 1
+        else:
+            act_char = item
+            act_series = 1
+
+        if act_series > best_series:
+            best_series = act_series
+
+    return best_series
+
+
+print(longest_consecutive_char())
