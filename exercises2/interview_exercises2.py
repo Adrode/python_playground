@@ -246,4 +246,34 @@ def invert_list_in_place():
 
     return numbers
 
-print(invert_list_in_place())
+
+# print(invert_list_in_place())
+
+
+def is_it_anagram():
+    s = "anagramm"
+    t = "nagaramm"
+
+    if len(t) != len(s):
+        return False
+
+    collection = {}
+
+    for item in s:
+        if item in collection:
+            collection[item] += 1
+        else:
+            collection[item] = 1
+
+    for item in t:
+        if item in collection:
+            collection[item] -= 1
+
+    for _, val in collection.items():
+        if val != 0:
+            return False
+
+    return True
+
+
+print(is_it_anagram())
