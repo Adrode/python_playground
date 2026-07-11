@@ -299,4 +299,30 @@ def longest_consecutive_char():
     return best_series
 
 
-print(longest_consecutive_char())
+# print(longest_consecutive_char())
+
+
+def most_frequent():
+    numbers = [4, 2, 4, 5, 2, 5, 3, 5, 5, 4]
+
+    collection = {}
+
+    for item in numbers:
+        if item in collection:
+            collection[item] += 1
+        else:
+            collection[item] = 1
+
+    most_freq = 0
+    best_key = 0
+    print(collection)
+
+    for key, val in collection.items():
+        if val > most_freq:
+            most_freq = val
+            best_key = key
+
+    return best_key
+
+
+print(most_frequent())
