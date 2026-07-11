@@ -325,4 +325,23 @@ def most_frequent():
     return best_key
 
 
-print(most_frequent())
+# print(most_frequent())
+
+
+def remove_duplicates_in_place():
+    numbers = [1, 2, 2, 3, 3, 4, 5, 5]
+
+    l = 0
+    r = 1
+
+    while r < len(numbers):
+        if numbers[l] != numbers[r]:
+            l += 1
+            r += 1
+        else:
+            numbers.pop(l)
+
+    return numbers
+
+
+print(remove_duplicates_in_place())
